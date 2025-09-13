@@ -5,6 +5,7 @@
       "name": "image-ruler-page",
       "devDependencies": {
         "@types/bun": "latest",
+        "bun-types": "latest",
       },
       "peerDependencies": {
         "typescript": "^5",
