@@ -15,6 +15,7 @@ export class ImageRuler {
     private clearBtn: HTMLButtonElement;
     private undoBtn: HTMLButtonElement;
     private rulersList: HTMLElement;
+    private fullList: HTMLElement;
     private imageInfo: HTMLElement;
 
     private currentImage: HTMLImageElement | null = null;
@@ -34,6 +35,7 @@ export class ImageRuler {
         this.clearBtn = document.getElementById('clearBtn') as HTMLButtonElement;
         this.undoBtn = document.getElementById('undoBtn') as HTMLButtonElement;
         this.rulersList = document.getElementById('rulersList')!;
+        this.fullList = document.getElementById('fullList')!;
         this.imageInfo = document.getElementById('imageInfo')!;
 
         this.initializeEventListeners();
@@ -317,6 +319,7 @@ export class ImageRuler {
         });
 
         this.rulersList.innerHTML = html;
+        this.fullList.innerHTML = JSON.stringify(this.rulers.map(r => Number((r.percentage/100).toFixed(4))), null, 2);
     }
 
     private updateImageInfo(): void {
