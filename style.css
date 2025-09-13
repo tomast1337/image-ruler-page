@@ -44,7 +44,7 @@ body {
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ header {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background: var(--surface0);
-    border-radius: 12px;
+    border-radius: 0 0 12px 12px;
     border: 1px solid var(--overlay0);
 }
 
@@ -79,6 +79,7 @@ header p {
     gap: 2rem;
     flex: 1;
     align-items: start;
+    padding: 0rem 1rem;
 }
 
 .canvas-container {
@@ -326,6 +327,84 @@ header p {
     pointer-events: none;
     backdrop-filter: blur(4px);
     z-index: 10;
+}
+
+/* Footer */
+.footer {
+    background: var(--surface0);
+    color: var(--text);
+    border: 1px solid var(--overlay0);
+    border-radius: 12px 12px 0 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text);
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 2px solid var(--surface1);
+    background: var(--surface0);
+}
+
+.footer-link:hover {
+    background: var(--surface1);
+    border-color: var(--overlay0);
+    color: var(--text);
+}
+
+.footer-link svg {
+    flex-shrink: 0;
+}
+
+.footer-author {
+    text-align: center;
+}
+
+.footer-author p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.footer-author strong {
+    color: var(--text);
+    opacity: 1;
 }
 
 /* Responsive design */
