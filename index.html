@@ -10,46 +10,46 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Interactive Image Ruler</h1>
-            <p>Drop an image or press Ctrl/Cmd+V to paste an image, then click to place rulers</p>
-        </header>
+<div class="container">
+    <header>
+        <h1>Interactive Image Ruler</h1>
+        <p>Drop an image or press Ctrl/Cmd+V to paste an image, then click to place rulers</p>
+    </header>
 
-        <div class="main-content">
-            <div class="canvas-container">
-                <input type="file" id="fileInput" accept="image/*" style="display: none;">
-                <div class="drop-zone" id="dropZone">
-                    <p>Drop an image here, paste with Ctrl/Cmd+V, or click to browse</p>
-                    <p class="hint">Supported formats: JPG, PNG, GIF, WebP</p>
-                </div>
-                <canvas id="imageCanvas" style="display: none;"></canvas>
-                <div class="preview-line" id="previewLine" style="display: none;"></div>
+    <div class="main-content">
+        <div class="canvas-container">
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <div class="drop-zone" id="dropZone">
+                <p>Drop an image here, paste with Ctrl/Cmd+V, or click to browse</p>
+                <p class="hint">Supported formats: JPG, PNG, GIF, WebP</p>
+            </div>
+            <canvas id="imageCanvas" style="display: none;"></canvas>
+            <div class="preview-line" id="previewLine" style="display: none;"></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="controls">
+                <button id="clearBtn" disabled>Clear Rulers</button>
+                <button id="undoBtn" disabled>Undo Last</button>
             </div>
 
-            <div class="sidebar">
-                <div class="controls">
-                    <button id="clearBtn" disabled>Clear Rulers</button>
-                    <button id="undoBtn" disabled>Undo Last</button>
+            <div class="rulers-panel">
+                <h3>Rulers</h3>
+                <div class="rulers-list" id="rulersList">
+                    <p class="no-rulers">No rulers placed yet</p>
                 </div>
+            </div>
 
-                <div class="rulers-panel">
-                    <h3>Rulers</h3>
-                    <div class="rulers-list" id="rulersList">
-                        <p class="no-rulers">No rulers placed yet</p>
-                    </div>
-                </div>
-
-                <div class="info-panel">
-                    <h3>Image Info</h3>
-                    <div class="image-info" id="imageInfo">
-                        <p>No image loaded</p>
-                    </div>
+            <div class="info-panel">
+                <h3>Image Info</h3>
+                <div class="image-info" id="imageInfo">
+                    <p>No image loaded</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script type="module" src="dist/index.js"></script>
+<script type="module" src="dist/index.js"></script>
 </body>
 </html>
