@@ -1,5 +1,5 @@
-import { ImageRuler } from "./imageRuler";
-import { Copyable } from "./copyable";
+import {ImageRuler} from "./imageRuler";
+import {Copyable} from "./copyable";
 import Toastify from 'toastify-js'
 
 // Initialize the application when DOM is loaded

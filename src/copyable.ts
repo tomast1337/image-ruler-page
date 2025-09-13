@@ -1,4 +1,5 @@
 import Toastify from "toastify-js";
+
 class Copyable {
     constructor() {
         this.init();
@@ -9,10 +10,10 @@ class Copyable {
         // This works for both existing and dynamically added elements
         document.addEventListener('click', (event) => {
             const target = event.target as Element;
-            
+
             // Check if the clicked element or any of its parents has data-copyable
             let copyableElement = target.closest('[data-copyable]');
-            
+
             if (copyableElement) {
                 navigator.clipboard.writeText(copyableElement.textContent || '');
                 Toastify({
@@ -30,4 +31,4 @@ class Copyable {
     }
 }
 
-export { Copyable };
+export {Copyable};

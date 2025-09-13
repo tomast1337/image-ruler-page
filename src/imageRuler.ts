@@ -1,10 +1,11 @@
-import { percentages } from "./utils";
+import {percentages} from "./utils";
 
 interface Ruler {
     y: number;
     height: number;
     percentage: number;
 }
+
 export class ImageRuler {
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D;
