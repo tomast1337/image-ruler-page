@@ -216,8 +216,8 @@ header p {
 }
 
 .rulers-list {
-    max-height: 300px;
     overflow-y: auto;
+    max-height: 500px;
 }
 
 .rulers-list::-webkit-scrollbar {

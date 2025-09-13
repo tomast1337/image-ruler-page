@@ -1,24 +1,27 @@
 {
   "name": "image-ruler-page",
   "version": "1.0.0",
-  "description": "Interactive Image Ruler",
-  "type": "module",
   "main": "dist/index.js",
-  "scripts": {
-    "dev": "bun run build:watch & bun run dev-server",
-    "build": "bun ./scripts/build.ts",
-    "build:watch": "bun ./scripts/build.ts --watch",
-    "start": "bun ./scripts/dev-server.ts"
-  },
   "devDependencies": {
-    "bun-types": "latest",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/toastify-js": "^1.12.4",
+    "bun-types": "latest"
   },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "description": "Interactive Image Ruler",
   "engines": {
     "bun": ">=1.0.0"
   },
   "private": true,
-  "peerDependencies": {
-    "typescript": "^5"
+  "scripts": {
+    "build": "bun ./scripts/build.ts",
+    "build:watch": "bun ./scripts/build.ts --watch",
+    "start": "bun ./scripts/dev-server.ts"
+  },
+  "type": "module",
+  "dependencies": {
+    "toastify-js": "^1.12.0"
   }
 }

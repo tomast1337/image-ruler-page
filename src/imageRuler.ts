@@ -309,7 +309,7 @@ export class ImageRuler {
         <div class="ruler-item">
           <div class="ruler-index">Ruler ${index + 1}</div>
           <div class="ruler-details">
-            y: <span class="ruler-y">${ruler.y}px</span> h: <span class="ruler-height">${ruler.height}px</span> %: <span class="ruler-percentage">${ruler.percentage / 100}</span>
+            y: <span class="ruler-y">${ruler.y}px</span> h: <span class="ruler-height">${ruler.height}px</span> %: <span data-copyable class="ruler-percentage">${ruler.percentage / 100}</span>
           </div>
         </div>
       `;
