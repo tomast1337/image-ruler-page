@@ -13,6 +13,7 @@ class ImageRuler {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private dropZone: HTMLElement;
+  private fileInput: HTMLInputElement;
   private previewLine: HTMLElement;
   private clearBtn: HTMLButtonElement;
   private undoBtn: HTMLButtonElement;
@@ -31,6 +32,7 @@ class ImageRuler {
     this.canvas = document.getElementById('imageCanvas') as HTMLCanvasElement;
     this.ctx = this.canvas.getContext('2d')!;
     this.dropZone = document.getElementById('dropZone')!;
+    this.fileInput = document.getElementById('fileInput') as HTMLInputElement;
     this.previewLine = document.getElementById('previewLine')!;
     this.clearBtn = document.getElementById('clearBtn') as HTMLButtonElement;
     this.undoBtn = document.getElementById('undoBtn') as HTMLButtonElement;
@@ -45,6 +47,10 @@ class ImageRuler {
     this.dropZone.addEventListener('dragover', this.handleDragOver.bind(this));
     this.dropZone.addEventListener('dragleave', this.handleDragLeave.bind(this));
     this.dropZone.addEventListener('drop', this.handleDrop.bind(this));
+    
+    // Click to browse files
+    this.dropZone.addEventListener('click', this.handleDropZoneClick.bind(this));
+    this.fileInput.addEventListener('change', this.handleFileSelect.bind(this));
     
     // Paste
     document.addEventListener('paste', this.handlePaste.bind(this));
@@ -82,6 +88,28 @@ class ImageRuler {
     const files = e.dataTransfer?.files;
     if (files && files.length > 0) {
       this.loadImageFile(files[0]!);
+    }
+  }
+  
+  private handleDropZoneClick(e: MouseEvent): void {
+    console.log('Drop zone clicked!'); // Debug log
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('Triggering file input...'); // Debug log
+    this.fileInput.click();
+  }
+  
+  private handleFileSelect(e: Event): void {
+    console.log('File input changed!'); // Debug log
+    const target = e.target as HTMLInputElement;
+    const files = target.files;
+    console.log('Selected files:', files); // Debug log
+    if (files && files.length > 0) {
+      console.log('Loading file:', files[0]!.name); // Debug log
+      this.loadImageFile(files[0]!);
+      // Clear the input so the same file can be selected again
+      target.value = '';
     }
   }
   

@@ -107,6 +107,12 @@ header p {
   cursor: pointer;
 }
 
+.drop-zone:hover {
+  border-color: var(--mauve);
+  background: rgba(202, 158, 230, 0.05);
+  transform: scale(1.01);
+}
+
 .drop-zone.drag-over {
   border-color: var(--blue);
   background: rgba(140, 170, 238, 0.1);
